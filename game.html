@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ICS ȘI ZERO</title>
+
+  <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="game.css">
+
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="node_modules/@popperjs/core/dist/umd/popper.js"></script>
+  <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div id="main-jumbo" class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="display-4 text-center">ICS ȘI ZERO</h1>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div id="game-board" class="col-6">
+            <div class="row">
+              <div class="col-4 cell unmarked-cell">
+
+              </div>
+              <div class="col-4 cell unmarked-cell">
+
+              </div>
+              <div class="col-4 cell unmarked-cell">
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 cell unmarked-cell">
+
+              </div>
+              <div class="col-4 cell unmarked-cell">
+
+              </div>
+              <div class="col-4 cell unmarked-cell">
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4 cell unmarked-cell">
+
+              </div>
+              <div class="col-4 cell unmarked-cell">
+
+              </div>
+              <div class="col-4 cell unmarked-cell">
+
+              </div>
+            </div>
+          </div>
+          <div class="col-5 offset-1">
+            <div id="interface">
+              <div id="welcome">
+                <h1>Bine ai venit!</h1>
+                <p class="lead">Acesta este un joc clasic de X și 0</p>
+                <p>Regulile sunt simple:</p>
+                <ul>
+                  <li>
+                    Se joacă în doi jucători, fiecare având atribuit un simbol (X sau 0). X începe primul.
+                  </li>
+                  <li>
+                    Pe rând, fiecare jucător pune simbolul său într-una din celulele goale ale tabelei de joc din stânga.
+                  </li>
+                  <li>
+                    Jucătorul care reușește să creeze o linie orizontală, verticală sau diagonală formată doar din
+                    simbolurile sale câștigă!
+                  </li>
+                </ul>
+                <hr>
+<!--                <p class="lead">Alege modul de joc:</p>-->
+                <button id="single" class="btn btn-dark mr-4">Joacă!</button>
+<!--                <button id="multi" class="btn btn-light">Multi Player</button>-->
+              </div>
+              <div id="single-player-game" hidden>
+                <h1>Cum te numești?</h1>
+                <br>
+                <div class="form-group row">
+                  <label class="col-4 col-form-label" for="single-player-name-field">Nume jucător</label>
+                  <div class="col">
+                    <input id="single-player-name-field" class="form-control" type="text">
+                    <div class="invalid-feedback">
+                      Te rog setează-ți un nume!
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <button id="single-player-start" class="btn btn-success"><i class="fas fa-play mr-2"></i>START</button>
+              </div>
+<!--              <div id="multi-player-game" hidden>-->
+<!--                <h1>Cum vă numiți?</h1>-->
+<!--                <br>-->
+<!--                <div class="form-group row">-->
+<!--                  <label class="col-3 col-form-label" for="multi-player-name-field1">Jucător 1</label>-->
+<!--                  <div class="col">-->
+<!--                    <input id="multi-player-name-field1" class="form-control" type="text">-->
+<!--                    <div class="invalid-feedback">-->
+<!--                      Te rog setează-ți un nume!-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <br>-->
+<!--                <div class="form-group row">-->
+<!--                  <label class="col-3 col-form-label" for="multi-player-name-field2">Jucător 2</label>-->
+<!--                  <div class="col">-->
+<!--                    <input id="multi-player-name-field2" class="form-control" type="text">-->
+<!--                    <div class="invalid-feedback">-->
+<!--                      Te rog setează-ți un nume!-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <br>-->
+<!--                <button id="multi-player-start" class="btn btn-success">START</button>-->
+<!--              </div>-->
+              <div id="single-player-score" hidden>
+                <h1><span id="single-player-name"></span> vs AI</h1>
+                <p class="lead">Tu ești <span id="single-player-symbol"></span></p>
+                <small class="text-muted">NB! X începe mereu primul!</small>
+                <div id="score-table" class="overflow-auto">
+                  <table id="score" class="table mt-3">
+                    <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Win/Loss/Tie</th>
+                      <th scope="col">Turns no.</th>
+                    </tr>
+                    </thead>
+                    <tbody id="single-player-score-table"></tbody>
+                  </table>
+                </div>
+                <br>
+                <button id="single-player-restart" class="btn btn-success" hidden>
+                  <i class="fas fa-undo mr-2"></i>Restart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="utils.js"></script>
+  <script type="text/javascript" src="game.js"></script>
+</body>
+</html>

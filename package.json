@@ -1,0 +1,17 @@
+{
+  "name": "ics_si_zero",
+  "version": "1.0.0",
+  "description": "Joc de X și 0.",
+  "main": "game.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Francisc Czobor",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "@popperjs/core": "^2.0.4",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1"
+  }
+}
