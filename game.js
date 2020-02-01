@@ -16,6 +16,7 @@ function playerClickEvent(event) {
   event.target.textContent = singlePlayerSymbol
   document.querySelectorAll('.unmarked-cell').forEach((cell) => {
     cell.removeEventListener('click', playerClickEvent)
+    cell.style.cursor = ''
   })
   event.target.classList.remove('unmarked-cell')
   turnsNo++
@@ -149,6 +150,7 @@ function playerTurn() {
   }
   gameBoard.forEach((cell) => {
     cell.addEventListener('click', playerClickEvent)
+    cell.style.cursor = 'pointer'
   })
 }
 
